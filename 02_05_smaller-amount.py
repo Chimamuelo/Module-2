@@ -39,10 +39,18 @@ class Ingredient:
         url="https://en.wikipedia.org/wiki/"
         webbrowser.open_new(url+self.name)
 
+
+class Spice(Ingredient):
+    
+    def grind(self):
+        print(f'you have {self.amount} of ground {self.name} ')
+
 if __name__ == '__main__':
     c = Ingredient("carrot", 5)
     p = Ingredient("pea", 2)
     s = c + p
     print(s)
-    c.get_info()
-    s.get_info()
+    #c.get_info()
+    #s.get_info()
+    spice=Spice('apple',5)
+    spice.expire()
