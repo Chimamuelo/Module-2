@@ -44,6 +44,13 @@ class Spice(Ingredient):
     
     def grind(self):
         print(f'you have {self.amount} of ground {self.name} ')
+    
+    def expire(self):
+        if self.name=='salt':
+            print('salt never expires!')
+        else:
+            print(f'Your {self.name} expired')
+            self.name= 'old ' + self.name
 
 if __name__ == '__main__':
     c = Ingredient("carrot", 5)
@@ -54,3 +61,4 @@ if __name__ == '__main__':
     #s.get_info()
     spice=Spice('apple',5)
     spice.expire()
+    print(spice.name)
